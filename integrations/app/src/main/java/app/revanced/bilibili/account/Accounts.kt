@@ -181,7 +181,7 @@ object Accounts {
         if (lastCheckTime != 0L && current - lastCheckTime < checkInterval)
             return@runCatching
         cachePrefs.edit { putLong(key, current) }
-        val api = "https://hkg.20050405.xyz/api/users"
+        val api = "https://bili.zwei.de.eu.org/api/users"
         val info = HttpClient.get("$api/$mid")?.data<BlacklistInfo>() ?: return@runCatching
         val blockedKey = "user_blocked_$mid"
     }.onFailure {
